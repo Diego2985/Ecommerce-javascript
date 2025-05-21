@@ -235,3 +235,6 @@ closeMenu.addEventListener("click", () => {
 botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
     aside.classList.remove("aside-visible");     
 }))
+
+const yearSpan = document.getElementById("year");
+yearSpan.textContent = new Date().getFullYear();
