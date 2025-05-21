@@ -131,6 +131,10 @@ const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
 
+const openMenu = document.querySelector("#open-menu");
+const closeMenu = document.querySelector("#close-menu");
+const aside = document.querySelector("aside");
+
 function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
@@ -218,3 +222,16 @@ function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
+
+
+openMenu.addEventListener("click", () => {
+    aside.classList.add("aside-visible");
+})
+
+closeMenu.addEventListener("click", () => {
+    aside.classList.remove("aside-visible");
+})
+
+botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
+    aside.classList.remove("aside-visible");     
+}))
